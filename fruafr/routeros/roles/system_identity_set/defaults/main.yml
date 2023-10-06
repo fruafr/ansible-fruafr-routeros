@@ -1,0 +1,11 @@
+---
+# (c) Copyright: David HEURTEVENT, 2023
+# License: Apache License, Version 2.0
+
+# defaults file for system_identity_set
+
+identity: router
+
+### DO NOT EDIT
+cmd: ''
+routerboard_fact: {}

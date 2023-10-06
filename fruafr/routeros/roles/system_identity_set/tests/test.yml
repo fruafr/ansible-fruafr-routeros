@@ -1,0 +1,19 @@
+---
+# (c) Copyright: David HEURTEVENT, 2023
+# License: Apache License, Version 2.0
+
+- hosts: localhost
+  remote_user: admin
+  vars:
+    identity: test
+  tasks:
+    - name: set the identity
+      import_role:
+        name: system_identity_set
+    - name: get the identity
+      import_role:
+        name: system_identity_print
+    - name: test the identities equality
+      ansible.builtin.assert:
+        that:
+          - identity == routerboard_fact['name']

@@ -1,0 +1,22 @@
+---
+# (c) Copyright: David HEURTEVENT, 2023
+# License: Apache License, Version 2.0
+
+# tasks file for system_identity_set
+
+# Set the identity
+# https://help.mikrotik.com/docs/display/ROS/Identity
+
+- name: 'Prepare command'
+  ansible.builtin.set_fact:
+    cmd: "/system identity set name={{ identity }}"
+
+- name: "Run {{ cmd }} on {{ ansible_host }}"
+  community.network.routeros_command:
+    commands: "[:put ([{{ cmd }}])]"
+  register: output
+  when: identity is defined and identity is not none and identity != ''
+
+- name: Display output
+  ansible.builtin.debug:
+    msg: "{{ output }}"

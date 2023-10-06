@@ -2,7 +2,7 @@
 # (c) Copyright: David HEURTEVENT, 2023
 # License: Apache License, Version 2.0
 
-# tasks file for system_resource_print
+# tasks file for system_identity_print
 
 # Display the identity
 #https://help.mikrotik.com/docs/display/ROS/Identity
