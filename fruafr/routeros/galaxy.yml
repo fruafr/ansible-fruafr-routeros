@@ -41,9 +41,8 @@ tags: ['mikrotik', 'routeros', 'network', 'router', 'switch']
 # L(specifiers,https://python-semanticversion.readthedocs.io/en/latest/#requirement-specification). Multiple version
 # range specifiers can be set and are separated by ','
 dependencies: {
-  "ansible.netcommon": "*"
-  "community.routeros": "*"
-
+  "ansible.netcommon": "*",
+  "community.routeros": "*",
 }
 
 # The URL of the originating SCM repository

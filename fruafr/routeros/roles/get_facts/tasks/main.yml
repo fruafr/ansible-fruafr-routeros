@@ -4,6 +4,10 @@
 
 # tasks file for get_facts
 
-- name: "Collect {{ subset }} facts from {{ ansible_host }}"
+- name: "Collect {{ subset }} facts from {{ ansible_hostname }}"
   community.routeros.facts:
-    gather_subset: {{ subset }}
+    gather_subset: "{{ subset }}"
+  register: ansible_facts
+
+- set_fact:
+    ansible_facts: "{{ ansible_facts }}"
