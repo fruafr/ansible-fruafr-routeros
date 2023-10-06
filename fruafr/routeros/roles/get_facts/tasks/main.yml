@@ -1,0 +1,9 @@
+---
+# (c) Copyright: David HEURTEVENT, 2023
+# License: Apache License, Version 2.0
+
+# tasks file for get_facts
+
+- name: "Collect {{ subset }} facts from {{ ansible_host }}"
+  community.routeros.facts:
+    gather_subset: {{ subset }}
