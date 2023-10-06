@@ -1,0 +1,37 @@
+---
+# (c) Copyright: David HEURTEVENT, 2023
+# License: Apache License, Version 2.0
+
+# tasks file for system_reset_configuration
+
+- name: 'Prepare command'
+  ansible.builtin.set_fact:
+    cmd: "/system reset-configuration"
+
+# keep-users	Do not remove existing users from the configuration
+- name: 'Handle keep-users'
+  ansible.builtin.set_fact:
+    cmd: "{{ cmd }} keep-users=yes"
+  when: keep_users | bool
+
+# no-defaults	Do not load the default configuration, just clear the configuration
+- name: 'Handle no-defaults'
+  ansible.builtin.set_fact:
+    cmd: "{{ cmd }} no-defaults=yes"
+  when: no_defaults | bool
+
+# skip-backup	Skip automatic backup file generation before reset
+- name: 'Handle skip-backup'
+  ansible.builtin.set_fact:
+    cmd: "{{ cmd }} skip-backup=yes"
+  when: skip_backup | bool
+
+# run-after-reset	Run specified .rsc file after reset. That way you can load your custom configuration.
+- name: 'Handle the run-after-reset'
+  ansible.builtin.set_fact:
+    cmd: "{{ cmd }} run-after-reset={{ run_after_reset }}"
+  when: run_after_reset is defined and run_after_reset != '' and run_after_reset is not none
+
+- name: "Reset {{ ansible_host }}"
+  community.network.routeros_command:
+    commands: "[:put ([{{ cmd }}])]"

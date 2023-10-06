@@ -43,6 +43,7 @@ tags: ['mikrotik', 'routeros', 'network', 'router', 'switch']
 dependencies: {
   "ansible.netcommon": "*",
   "community.routeros": "*",
+  "community.network": "*"
 }
 
 # The URL of the originating SCM repository

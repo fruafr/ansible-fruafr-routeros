@@ -1,0 +1,26 @@
+---
+# (c) Copyright: David HEURTEVENT, 2023
+# License: Apache License, Version 2.0
+
+# tasks file for system_routerboard_print
+#https://help.mikrotik.com/docs/display/ROS/RouterBOARD
+
+- name: 'Prepare command'
+  ansible.builtin.set_fact:
+    cmd: "/system routerboard print"
+
+- name: "Run {{ cmd }} on {{ ansible_host }}"
+  community.network.routeros_command:
+    commands: "[:put ([{{ cmd }}])]"
+  register: output
+
+- name: 'Set routerboard fact'
+  ansible.builtin.set_fact:
+    routerboard_fact: "{{ routerboard_fact | default([]) | combine ( { item.split(':')[0] | trim : item.split(':')[1] | trim }) }}"
+  with_items: "{{ output.stdout_lines[0] | list }}"
+  no_log: true
+
+- name: 'Display routerboard_fact'
+  ansible.builtin.debug:
+    var: routerboard_fact
+

@@ -1,0 +1,18 @@
+---
+# (c) Copyright: David HEURTEVENT, 2023
+# License: Apache License, Version 2.0
+
+# defaults file for system_reset_configuration
+
+# See https://help.mikrotik.com/docs/display/ROS/Configuration+Management
+# keep-users	Do not remove existing users from the configuration
+keep_users: yes
+# no-defaults	Do not load the default configuration, just clear the configuration
+no_defaults: no
+# skip-backup	Skip automatic backup file generation before reset
+skip_backup: no
+# run-after-reset	Run specified .rsc file after reset. That way you can load your custom configuration.
+run_after_reset:
+
+### DO NOT EDIT
+cmd: ''
