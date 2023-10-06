@@ -1,0 +1,28 @@
+---
+# (c) Copyright: David HEURTEVENT, 2023
+# License: Apache License, Version 2.0
+
+# tasks file for system_identity_print
+
+# Display the current identity
+
+#https://help.mikrotik.com/docs/display/ROS/Identity
+
+- name: 'Prepare command'
+  ansible.builtin.set_fact:
+    cmd: "/system identity print"
+
+- name: "Run {{ cmd }} on {{ ansible_host }}"
+  community.network.routeros_command:
+    commands: "[:put ([{{ cmd }}])]"
+  register: output
+
+- name: 'Set routerboard fact'
+  ansible.builtin.set_fact:
+    routerboard_fact: "{{ routerboard_fact | default([]) | combine ( { item.split(':')[0] | trim : item.split(':')[1] | trim }) }}"
+  with_items: "{{ output.stdout_lines[0] | list }}"
+
+- name: 'Display the current identity'
+  ansible.builtin.debug:
+    msg: "{{ routerboard_fact['name'] }}"
+
