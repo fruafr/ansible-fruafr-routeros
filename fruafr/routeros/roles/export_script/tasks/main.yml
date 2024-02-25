@@ -1,0 +1,32 @@
+---
+# Author: David HEURTEVENT
+# Date : 2024-02-25
+# License: MIT
+
+# tasks file for export script
+
+# Export the configuration as a plain text script
+
+- name: "Backup file should be absent in local filesystem"
+  ansible.builtin.file:
+    path: "{{ export_folder }}/{{ script_name }}.rsc"
+    state: absent
+
+- name: "Export the unencrypted configuration on the Mikrotik device to {{ script_name }}.rsc"
+  community.routeros.command:
+    commands: "/export file={{ script_name }}.rsc"
+
+- name: "Download the backup"
+  ansible.netcommon.net_get:
+    src: "{{ script_name }}.rsc"
+    dest: "{{ export_folder }}/{{ script_name }}.rsc"
+    protocol: sftp
+
+- name: "Backup should be present in local filesystem"
+  ansible.builtin.file:
+    path: "{{ export_folder }}/{{ script_name }}.rsc"
+    state: file
+
+- name: "Delete backup file on the Mikrotik device"
+  community.routeros.command:
+    commands: "/file remove {{ script_name }}.rsc"
