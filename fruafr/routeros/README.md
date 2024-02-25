@@ -17,6 +17,20 @@ Does not support answers to prompt questions due to limitation in [community.rou
 
 [RouterOS Documentation](https://help.mikrotik.com/docs/) is available.
 
+## Playbooks
+- get_facts.yml : Gather and print the system facts
+- system_identity_print.yml : Display the system's [identity](https://help.mikrotik.com/docs/display/ROS/Identity)
+- system_resource_print.yml : Gather and display the current system [resources](https://help.mikrotik.com/docs/display/ROS/Resource)
+- system_routerboard_print.yml : Gather and print the [routerboard information](https://help.mikrotik.com/docs/display/ROS/RouterBOARD) (board, firmware version etc)
+
+## Roles
+- fruafr.routeros.get_facts : Gather and print the system facts
+- fruafr.routeros.system_identity_print : Display the system's [identity](https://help.mikrotik.com/docs/display/ROS/Identity)
+- fruafr.routeros.system_identity_set : Change the system's [identity](https://help.mikrotik.com/docs/display/ROS/Identity)
+- fruafr.routeros.system_resource_print : Gather and display the current system [resources](https://help.mikrotik.com/docs/display/ROS/Resource)
+- fruafr.routeros.system_routerboard_print : Gather and print the [routerboard information](https://help.mikrotik.com/docs/display/ROS/RouterBOARD) (board, firmware version etc)
+
+
 ## Technical details
 This collection uses:
 - The MikroTik CLI

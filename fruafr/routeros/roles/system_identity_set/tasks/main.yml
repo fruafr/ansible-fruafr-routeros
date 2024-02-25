@@ -3,7 +3,7 @@
 # License: MIT
 # tasks file for system_identity_set
 
-# Set the identity
+# Change the system's identity
 # https://help.mikrotik.com/docs/display/ROS/Identity
 
 - name: 'Prepare command'

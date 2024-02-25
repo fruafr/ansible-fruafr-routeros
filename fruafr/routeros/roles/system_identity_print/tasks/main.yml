@@ -4,7 +4,7 @@
 
 # tasks file for system_identity_print
 
-# Display the identity
+# Display the system's identity
 #https://help.mikrotik.com/docs/display/ROS/Identity
 
 - name: 'Prepare command'

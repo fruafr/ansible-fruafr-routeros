@@ -4,7 +4,7 @@
 
 # tasks file for system_resource_print
 
-# Display the current resource
+# Gather and display the current system resources
 #https://help.mikrotik.com/docs/display/ROS/Resource
 
 - name: 'Prepare command'

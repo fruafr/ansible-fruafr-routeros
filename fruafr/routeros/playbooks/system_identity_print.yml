@@ -1,0 +1,14 @@
+---
+# Author: David HEURTEVENT
+# Date: 2024-02-25
+# License: MIT
+
+# Display the system's identity
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: print system identity
+    import_role: 
+      name: system_identity_print

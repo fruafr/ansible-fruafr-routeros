@@ -4,6 +4,8 @@
 
 # tasks file for get_facts
 
+# Gather and print the system facts
+
 - name: "Collect {{ subset }} facts from {{ ansible_host }}"
   community.routeros.facts:
     gather_subset: "{{ subset }}"

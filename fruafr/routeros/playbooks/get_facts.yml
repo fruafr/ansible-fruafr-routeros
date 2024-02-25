@@ -1,0 +1,17 @@
+---
+# Author: David HEURTEVENT
+# Date: 2024-02-25
+# License: MIT
+
+# Gather and print the system facts
+
+- hosts: all
+  become: true
+  tasks:
+  - name: gather facts
+    import_role: 
+      name: get_facts
+  
+  - name: print facts
+    debug:
+      msg: "{{ ansible_facts }}"

@@ -3,6 +3,8 @@
 # License: MIT
 
 # tasks file for system_routerboard_print
+
+# Gather and print the routerboard information (board, firmware version etc)
 #https://help.mikrotik.com/docs/display/ROS/RouterBOARD
 
 - name: 'Prepare command'

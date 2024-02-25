@@ -1,0 +1,14 @@
+---
+# Author: David HEURTEVENT
+# Date: 2024-02-25
+# License: MIT
+
+# Gather and display the current system resources
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: print system resources
+    import_role: 
+      name: system_resource_print
