@@ -4,7 +4,7 @@
 
 # tasks file for system_clock_print
 
-# Display the system clock 
+# Print the system clock 
 #https://help.mikrotik.com/docs/display/ROS/Clock
 
 - name: 'Prepare command'

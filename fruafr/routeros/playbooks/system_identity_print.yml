@@ -3,7 +3,7 @@
 # Date: 2024-02-25
 # License: MIT
 
-# Display the system's identity
+# Print the system's identity
 
 - hosts: all
   become: true

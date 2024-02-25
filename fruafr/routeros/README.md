@@ -30,24 +30,26 @@ Does not support answers to prompt questions due to limitation in [community.rou
 - interface_wireless_print.yml: Print wireless interface details
 - ip_address_print.yml : Print the list of IPv4 addresses
 - ip_route_print.yml : Print the IPv4 routes 
-- system_identity_print.yml : Display the system's [identity](https://help.mikrotik.com/docs/display/ROS/Identity)
-- system_resource_print.yml : Gather and display the current system [resources](https://help.mikrotik.com/docs/display/ROS/Resource)
+- system_clock_print.yml : Print the system [clock](https://help.mikrotik.com/docs/display/ROS/Clock)
+- system_identity_print.yml : Print the system's [identity](https://help.mikrotik.com/docs/display/ROS/Identity)
+- system_resource_print.yml : Gather and print the current system [resources](https://help.mikrotik.com/docs/display/ROS/Resource)
 - system_routerboard_print.yml : Gather and print the [routerboard information](https://help.mikrotik.com/docs/display/ROS/RouterBOARD) (board, firmware version etc)
 - user_print.yml: Print the list of users
 
 ## Roles
 - fruafr.routeros.default_command: Execute a command with general command, subcommand and parameters
-- fruafr.routeros.export_script: Export the configuration as a plain text script
 - fruafr.routeros.export_backup_encrypted: Export the configuration as an encrypted backup
+- fruafr.routeros.export_script: Export the configuration as a plain text script
 - fruafr.routeros.file_get: Download a file from the Mikrotik device
 - fruafr.routeros.file_put: Copy a file to the Mikrotik device
 - fruafr.routeros.get_facts : Gather and print the system facts
 - fruafr.routeros.interface_print : Print interface details
 - fruafr.routeros.ip_address_print : Print the list of IPv4 addresses
 - fruafr.routeros.ip_route_print : Print the IPv4 routes 
-- fruafr.routeros.system_identity_print : Display the system's [identity](https://help.mikrotik.com/docs/display/ROS/Identity)
+- fruafr.routeros.system_clock_print : Print the system [clock](https://help.mikrotik.com/docs/display/ROS/Clock)
+- fruafr.routeros.system_identity_print : Print the system's [identity](https://help.mikrotik.com/docs/display/ROS/Identity)
 - fruafr.routeros.system_identity_set : Change the system's [identity](https://help.mikrotik.com/docs/display/ROS/Identity)
-- fruafr.routeros.system_resource_print : Gather and display the current system [resources](https://help.mikrotik.com/docs/display/ROS/Resource)
+- fruafr.routeros.system_resource_print : Gather and print the current system [resources](https://help.mikrotik.com/docs/display/ROS/Resource)
 - fruafr.routeros.system_routerboard_print : Gather and print the [routerboard information](https://help.mikrotik.com/docs/display/ROS/RouterBOARD) (board, firmware version etc)
 - fruafr.routeros.user_print : Print the list of users
 
@@ -70,9 +72,8 @@ This collection uses:
 - [ansible.netcommon](https://docs.ansible.com/ansible/latest/collections/ansible/netcommon/index.html): `ansible-galaxy collection install ansible.netcommon`
 
 ## Help needed
-- Documentation of roles
-- Tests
 - Implementing answer to prompt questions in community.routeros and community.network.routeros_command
+- Implementing long running processes (script execution on Mikrotik device)
 
 ## License
 Licensed under the MIT License.

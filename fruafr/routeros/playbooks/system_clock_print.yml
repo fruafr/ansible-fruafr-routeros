@@ -3,12 +3,12 @@
 # Date: 2024-02-25
 # License: MIT
 
-# Gather and print the current system resources
+# Print the system's clock
 
 - hosts: all
   become: true
   tasks:
 
-  - name: print system resources
+  - name: print system clock
     import_role: 
-      name: system_resource_print
+      name: system_clock_print
