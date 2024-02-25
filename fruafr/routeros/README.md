@@ -1,10 +1,10 @@
 # ansible-fruafr-routeros
 
-Ansible collection for Mikrotik RouterOs
+Ansible collection for Mikrotik RouterOs : print configuration, import or export files/backups
 
 ## Purpose
 
-The purpose of this collection is to provide Ansible roles to perform high-level tasks on Routerboard such as printing configuration, import and export of backups.
+The purpose of this collection is to provide Ansible roles to perform high-level tasks on Routerboard such as printing configuration, import and export of files/backups.
 
 It is NOT officially supported by Mikrotik.
 
