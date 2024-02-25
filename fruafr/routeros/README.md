@@ -34,6 +34,7 @@ Does not support answers to prompt questions due to limitation in [community.rou
 ## Roles
 - fruafr.routeros.default_command: Execute a command with general command, subcommand and parameters
 - fruafr.routeros.export_script: Export the configuration as a plain text script
+- fruafr.routeros.export_backup_encrypted: Export the configuration as an encrypted backup
 - fruafr.routeros.get_facts : Gather and print the system facts
 - fruafr.routeros.interface_print : Print interface details
 - fruafr.routeros.ip_address_print : Print the list of IPv4 addresses
