@@ -14,7 +14,7 @@
 
 - name: "Export the unencrypted configuration on the Mikrotik device"
   community.routeros.command:
-    commands: "/system backup save name={{ temp_file}} password={{ password }}"
+    commands: "/system backup save name={{ temp_file }} password={{ password }}"
 
 - name: "Download the backup"
   ansible.netcommon.net_get:

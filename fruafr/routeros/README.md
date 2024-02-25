@@ -8,8 +8,6 @@ The purpose of this collection is to provide Ansible roles to perform high-level
 
 It is NOT officially supported by Mikrotik.
 
-Does not support answers to prompt questions due to limitation in [community.routeros/issues/42](https://github.com/ansible-collections/community.routeros/issues/42)
-
 ## Introduction
 [Mikrotik](https://mikrotik.com/aboutus) is a Latvian company developing routers, switches and ISP systems.
 
@@ -62,6 +60,31 @@ Does not support answers to prompt questions due to limitation in [community.rou
 
 - Install pylibssh
 `pip3 install ansible-pylibssh`
+
+## Known issues
+
+### Corrupted files with Mikrotik
+
+With ansible net common and libssh, files uploaded or downloaded from Mikrotik devices are corrupted.
+
+[Issue](https://forum.mikrotik.com/viewtopic.php?t=190816) or [Ansible net common corrupted files](https://www.reddit.com/r/ansible/comments/w8p5pq/ansiblenetcommonnet_get_corrupted_files/) 
+
+Solution : 
+
+You MUST set in ansible.cfg:
+
+[paramiko_connection]
+look_for_keys = False
+
+and the following variables in your inventory variables:
+
+ansible_connection: ansible.netcommon.network_cli
+ansible_network_os: community.routeros.routeros
+ansible_network_cli_ssh_type: paramiko
+
+### Answers to prompt
+
+Does not support answers to prompt questions due to limitation in [community.routeros/issues/42](https://github.com/ansible-collections/community.routeros/issues/42)
 
 ## Technical details
 This collection uses:
