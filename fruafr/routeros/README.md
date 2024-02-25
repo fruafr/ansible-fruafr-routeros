@@ -4,9 +4,9 @@ Ansible collection for Mikrotik RouterOs
 
 ## Purpose
 
-The purpose of this collection is to provide Ansible roles to perform high-level tasks on Routerboard such as configuration, import and export of backups.
+The purpose of this collection is to provide Ansible roles to perform high-level tasks on Routerboard such as printing configuration, import and export of backups.
 
-It is NOT officially supported by Mikrotik. Use it at your own risk.
+It is NOT officially supported by Mikrotik.
 
 Does not support answers to prompt questions due to limitation in [community.routeros/issues/42](https://github.com/ansible-collections/community.routeros/issues/42)
 
@@ -19,25 +19,20 @@ Does not support answers to prompt questions due to limitation in [community.rou
 
 ## Playbooks
 - get_facts.yml : Gather and print the system facts
+- ip_address_print.yml : Print the list of IPv4 addresses
 - system_identity_print.yml : Display the system's [identity](https://help.mikrotik.com/docs/display/ROS/Identity)
 - system_resource_print.yml : Gather and display the current system [resources](https://help.mikrotik.com/docs/display/ROS/Resource)
 - system_routerboard_print.yml : Gather and print the [routerboard information](https://help.mikrotik.com/docs/display/ROS/RouterBOARD) (board, firmware version etc)
+- user_print.yml: Print the list of users
 
 ## Roles
 - fruafr.routeros.get_facts : Gather and print the system facts
+- fruafr.routeros.ip_address_print : Print the list of IPv4 addresses
 - fruafr.routeros.system_identity_print : Display the system's [identity](https://help.mikrotik.com/docs/display/ROS/Identity)
 - fruafr.routeros.system_identity_set : Change the system's [identity](https://help.mikrotik.com/docs/display/ROS/Identity)
 - fruafr.routeros.system_resource_print : Gather and display the current system [resources](https://help.mikrotik.com/docs/display/ROS/Resource)
 - fruafr.routeros.system_routerboard_print : Gather and print the [routerboard information](https://help.mikrotik.com/docs/display/ROS/RouterBOARD) (board, firmware version etc)
-
-
-## Technical details
-This collection uses:
-- The MikroTik CLI
-- [community.network](https://docs.ansible.com/ansible/latest/collections/community/network/index.html): `ansible-galaxy collection install community.network`
-    - [community.network.routeros_command](https://docs.ansible.com/ansible/latest/collections/community/routeros/command_module.html#ansible-collections-community-routeros-command-module)
-- [community.routeros](https://docs.ansible.com/ansible/latest/collections/community/routeros/index.html): `ansible-galaxy collection install community.routeros`
-- [ansible.netcommon](https://docs.ansible.com/ansible/latest/collections/ansible/netcommon/index.html): `ansible-galaxy collection install ansible.netcommon`
+- fruafr.routeros.user_print : Print the list of users
 
 ## Install the collection
 `ansible-galaxy install fruafr.routeros`
@@ -48,6 +43,14 @@ This collection uses:
 
 - Install pylibssh
 `pip3 install ansible-pylibssh`
+
+## Technical details
+This collection uses:
+- The MikroTik CLI
+- [community.network](https://docs.ansible.com/ansible/latest/collections/community/network/index.html): `ansible-galaxy collection install community.network`
+    - [community.network.routeros_command](https://docs.ansible.com/ansible/latest/collections/community/routeros/command_module.html#ansible-collections-community-routeros-command-module)
+- [community.routeros](https://docs.ansible.com/ansible/latest/collections/community/routeros/index.html): `ansible-galaxy collection install community.routeros`
+- [ansible.netcommon](https://docs.ansible.com/ansible/latest/collections/ansible/netcommon/index.html): `ansible-galaxy collection install ansible.netcommon`
 
 ## Help needed
 - Documentation of roles

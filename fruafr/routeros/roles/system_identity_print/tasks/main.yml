@@ -16,7 +16,7 @@
     commands: "[:put ([{{ cmd }}])]"
   register: output
 
-- name: 'Set routerboard fact'
+- name: 'Store fact'
   ansible.builtin.set_fact:
     routerboard_fact: "{{ routerboard_fact | default([]) | combine ( { item.split(':')[0] | trim : item.split(':')[1] | trim }) }}"
   with_items: "{{ output.stdout_lines[0] | list }}"

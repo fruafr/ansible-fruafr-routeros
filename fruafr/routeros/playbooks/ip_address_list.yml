@@ -1,0 +1,14 @@
+---
+# Author: David HEURTEVENT
+# Date: 2024-02-25
+# License: MIT
+
+# Print the list of IPv4 addresses
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: print users
+    import_role: 
+      name: ip_address_print
