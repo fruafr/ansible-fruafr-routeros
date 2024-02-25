@@ -2,14 +2,14 @@
 # (c) Copyright: David HEURTEVENT, 2023
 # License: MIT
 
-# tasks file for system_resource_print
+# tasks file for system_clock_print
 
-# Display the current resource
-#https://help.mikrotik.com/docs/display/ROS/Resource
+# Display the system clock 
+#https://help.mikrotik.com/docs/display/ROS/Clock
 
 - name: 'Prepare command'
   ansible.builtin.set_fact:
-    cmd: "/system resource print"
+    cmd: "/system clock print"
 
 - name: "Run {{ cmd }} on {{ ansible_host }}"
   community.network.routeros_command:
@@ -20,8 +20,8 @@
   ansible.builtin.set_fact:
     routerboard_fact: "{{ routerboard_fact | default([]) | combine ( { item.split(':')[0] | trim : item.split(':')[1] | trim }) }}"
   with_items: "{{ output.stdout_lines[0] | list }}"
-  no_log: true
 
-- name: 'Display the current resource'
+- name: 'Display the system clock'
   ansible.builtin.debug:
     msg: "{{ routerboard_fact }}"
+

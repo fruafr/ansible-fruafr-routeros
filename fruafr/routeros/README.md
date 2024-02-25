@@ -41,7 +41,7 @@ This collection uses:
 - Implementing answer to prompt questions in community.routeros and community.network.routeros_command
 
 ## License
-Licensed under the Apache License, Version 2.0.
+Licensed under the MIT License.
 
 ## Author
 David Heurtevent <david@heurtevent.org>

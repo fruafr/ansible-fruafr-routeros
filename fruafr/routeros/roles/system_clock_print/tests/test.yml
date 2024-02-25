@@ -7,12 +7,16 @@
   tasks:
     - name: import role
       import_role:
-        name: system_identity_print
-
+        name: system_clock_print
+    
     - name: Assert if dictionary
       assert:
         that: ( routerboard_fact is defined ) and ( routerboard_fact | type_debug == 'dict' )
 
-    - name: Assert has key name
+    - name: Assert has key date
       assert:
-        that: ( routerboard_fact['name'] is defined )
+        that: ( routerboard_fact['date'] is defined )
+
+    - name: Assert has key time
+      assert:
+        that: ( routerboard_fact['time'] is defined )

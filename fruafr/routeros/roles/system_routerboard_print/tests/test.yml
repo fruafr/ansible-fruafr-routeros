@@ -1,8 +1,22 @@
 ---
 # (c) Copyright: David HEURTEVENT, 2023
-# License: Apache License, Version 2.0
+# License: MIT
 
 - hosts: localhost
   remote_user: admin
-  roles:
-    - system_routerboard_print
+  tasks:
+    - name: import role
+      import_role:
+        name: system_routerboard_print
+
+    - name: Assert if dictionary
+      assert:
+        that: ( routerboard_fact is defined ) and ( routerboard_fact | type_debug == 'dict' )
+
+    - name: Assert has key routerboard
+      assert:
+        that: ( routerboard_fact['routerboard'] is defined )
+
+    - name: Assert has key model
+      assert:
+        that: ( routerboard_fact['model'] is defined )
