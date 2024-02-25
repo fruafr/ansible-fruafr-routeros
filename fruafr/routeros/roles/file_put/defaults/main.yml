@@ -3,10 +3,9 @@
 # Date : 2024-02-25
 # License: MIT
 
-# defaults file for export_backup_encrypted
+# defaults file for file_put
 # See https://docs.ansible.com/ansible/latest/collections/community/routeros/facts_module.html#ansible-collections-community-routeros-facts-module
 subset: 'config'
 
-target_filepath: '/tmp/backup.cfg'
-temp_file: 'temp_backup_ansible.backup'
-password: ''
+source_filepath: '/tmp/backup.cfg.rsc'
+target_filepath: 'backup.cfg.rsc'

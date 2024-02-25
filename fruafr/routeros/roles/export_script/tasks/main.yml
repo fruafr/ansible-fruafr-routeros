@@ -9,24 +9,24 @@
 
 - name: "Backup file should be absent in local filesystem"
   ansible.builtin.file:
-    path: "{{ export_folder }}/{{ script_name }}.rsc"
+    path: "{{ target_filepath }}"
     state: absent
 
-- name: "Export the unencrypted configuration on the Mikrotik device to {{ script_name }}.rsc"
+- name: "Export the unencrypted configuration on the Mikrotik device"
   community.routeros.command:
-    commands: "/export file={{ script_name }}.rsc"
+    commands: "/export file={{ temp_file }}"
 
 - name: "Download the backup"
   ansible.netcommon.net_get:
-    src: "{{ script_name }}.rsc"
-    dest: "{{ export_folder }}/{{ script_name }}.rsc"
+    src: "{{ temp_file }}"
+    dest: "{{ target_filepath }}"
     protocol: sftp
 
 - name: "Backup should be present in local filesystem"
   ansible.builtin.file:
-    path: "{{ export_folder }}/{{ script_name }}.rsc"
+    path: "{{ target_filepath }}"
     state: file
 
 - name: "Delete backup file on the Mikrotik device"
   community.routeros.command:
-    commands: "/file remove {{ script_name }}.rsc"
+    commands: "/file remove {{ temp_file }}"

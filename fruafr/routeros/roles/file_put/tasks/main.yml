@@ -1,0 +1,19 @@
+---
+# Author: David HEURTEVENT
+# Date : 2024-02-25
+# License: MIT
+
+# tasks file for file_put
+
+# Copy a file to the Mikrotik device
+
+- name: "The source filepath must exist"
+  ansible.builtin.file:
+    path: "{{ source_filepath }}"
+    state: file
+
+- name: "Copy the file to the Mikrotik device"
+  ansible.netcommon.net_put:
+    src: "{{ source_filepath }}"
+    dest: "{{ target_filepath }}"
+    protocol: sftp

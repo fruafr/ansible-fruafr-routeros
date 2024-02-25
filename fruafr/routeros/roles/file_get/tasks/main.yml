@@ -1,0 +1,19 @@
+---
+# Author: David HEURTEVENT
+# Date : 2024-02-25
+# License: MIT
+
+# tasks file for export script
+
+# Download a file from the Mikrotik device
+
+- name: "Download the file {{ source_filepath }} from the Mikrotik device and save to {{ target_filepath }}"
+  ansible.netcommon.net_get:
+    src: "{{ source_filepath }}"
+    dest: "{{ target_filepath }}"
+    protocol: sftp
+
+- name: "File should be present in local filesystem"
+  ansible.builtin.file:
+    path: "{{ target_filepath }}"
+    state: file

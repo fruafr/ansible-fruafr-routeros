@@ -1,0 +1,19 @@
+---
+# Author: David HEURTEVENT
+# Date: 2024-02-25
+# License: MIT
+
+# Export the configuration to an encrypted file
+- hosts: all
+  become: true
+  vars_prompt:
+    - name: target_filepath
+      prompt: Where should the configuration file be saved ?
+      private: false
+    - name: password
+      prompt: What is the encryption password ?
+  tasks:
+  - name: Export the configuration to an encrypted file
+    become: true
+    import_role: 
+      name: export_backup_encrypted

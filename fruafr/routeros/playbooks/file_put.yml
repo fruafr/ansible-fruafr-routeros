@@ -1,0 +1,21 @@
+---
+# Author: David HEURTEVENT
+# Date: 2024-02-25
+# License: MIT
+
+# Copy a file to the Mikrotik device
+
+- hosts: all
+  become: true
+  vars_prompt:
+    - name: source_filepath
+      prompt: What is the source filepath (path to the file on your device) ?
+      private: false
+    - name: target_filepath
+      prompt: Where is the target filepath (path on Mikrotik) ?
+      private: false
+  tasks:
+    - name: "Copy the file {{ source_filepath }} to the Mikrotik device at {{ target_filepath }}"
+      become: true
+      import_role: 
+        name: file_put

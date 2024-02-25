@@ -7,5 +7,5 @@
 # See https://docs.ansible.com/ansible/latest/collections/community/routeros/facts_module.html#ansible-collections-community-routeros-facts-module
 subset: 'config'
 
-script_name: 'backup.cfg'
-export_folder: '/tmp'
+target_filepath: '/tmp/backup.rsc'
+temp_file: 'temp_backup_ansible.rsc'

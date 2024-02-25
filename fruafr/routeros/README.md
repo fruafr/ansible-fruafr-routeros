@@ -19,6 +19,10 @@ Does not support answers to prompt questions due to limitation in [community.rou
 
 ## Playbooks
 - get_facts.yml : Gather and print the system facts
+- export_backup_encrypted.yml : Export the configuration to an encrypted file 
+- export_script.yml :  Export the configuration as a plain text script
+- file_get.yml: Download a file from the Mikrotik device
+- file_put.yml: Copy a file to the Mikrotik device
 - interface_bridge_print.yml: Print bridge interface details
 - interface_ethernet_print.yml: Print ethernet interface details
 - interface_print.yml : Print interface details
@@ -35,9 +39,9 @@ Does not support answers to prompt questions due to limitation in [community.rou
 - fruafr.routeros.default_command: Execute a command with general command, subcommand and parameters
 - fruafr.routeros.export_script: Export the configuration as a plain text script
 - fruafr.routeros.export_backup_encrypted: Export the configuration as an encrypted backup
+- fruafr.routeros.file_get: Download a file from the Mikrotik device
+- fruafr.routeros.file_put: Copy a file to the Mikrotik device
 - fruafr.routeros.get_facts : Gather and print the system facts
-- fruafr.routeros.import_script : Import a plain text configuration script
-- fruafr.routeros.import_backup_encrypted : Import an encrypted backup
 - fruafr.routeros.interface_print : Print interface details
 - fruafr.routeros.ip_address_print : Print the list of IPv4 addresses
 - fruafr.routeros.ip_route_print : Print the IPv4 routes 

@@ -1,0 +1,17 @@
+---
+# Author: David HEURTEVENT
+# Date: 2024-02-25
+# License: MIT
+
+# Export the configuration as a plain text script
+- hosts: all
+  become: true
+  vars_prompt:
+    - name: target_filepath
+      prompt: Where should the configuration file be saved ?
+      private: false
+  tasks:
+    - name: Export the configuration as a plain text script
+      become: true
+      import_role: 
+        name: export_script
