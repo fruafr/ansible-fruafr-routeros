@@ -1,0 +1,14 @@
+---
+# Author: David HEURTEVENT
+# Date: 2024-02-25
+# License: MIT
+
+# Print interface details
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: print interface details
+    import_role: 
+      name: interface_print

@@ -19,6 +19,11 @@ Does not support answers to prompt questions due to limitation in [community.rou
 
 ## Playbooks
 - get_facts.yml : Gather and print the system facts
+- interface_bridge_print.yml: Print bridge interface details
+- interface_ethernet_print.yml: Print ethernet interface details
+- interface_print.yml : Print interface details
+- interface_wireguard_print.yml: Print wireguard interface details
+- interface_wireless_print.yml: Print wireless interface details
 - ip_address_print.yml : Print the list of IPv4 addresses
 - ip_route_print.yml : Print the IPv4 routes 
 - system_identity_print.yml : Display the system's [identity](https://help.mikrotik.com/docs/display/ROS/Identity)
@@ -27,7 +32,9 @@ Does not support answers to prompt questions due to limitation in [community.rou
 - user_print.yml: Print the list of users
 
 ## Roles
+- fruafr.routeros.default_command: Execute a command with general command, subcommand and parameters
 - fruafr.routeros.get_facts : Gather and print the system facts
+- fruafr.routeros.interface_print : Print interface details
 - fruafr.routeros.ip_address_print : Print the list of IPv4 addresses
 - fruafr.routeros.ip_route_print : Print the IPv4 routes 
 - fruafr.routeros.system_identity_print : Display the system's [identity](https://help.mikrotik.com/docs/display/ROS/Identity)

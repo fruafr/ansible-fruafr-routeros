@@ -1,0 +1,12 @@
+---
+# Author: David HEURTEVENT
+# Date : 2024-02-25
+# License: MIT
+
+# defaults file for default_command
+# See https://docs.ansible.com/ansible/latest/collections/community/routeros/facts_module.html#ansible-collections-community-routeros-facts-module
+subset: 'config'
+
+command: 'ping'
+subcommand: ''
+parameters: ''

@@ -1,0 +1,26 @@
+---
+# Author: David HEURTEVENT
+# Date : 2024-02-25
+# License: MIT
+
+# tasks file for default_command
+
+# Execute a command with general command, subcommand and parameters
+
+- name: 'Prepare command'
+  ansible.builtin.set_fact:
+    cmd: "/{{ command }}/{{ subcommand }} {{ parameters}}"
+
+- name: "Run {{ cmd }} on {{ ansible_host }}"
+  community.network.routeros_command:
+    commands: "{{ cmd }}"
+  register: output
+
+- name: 'Store user list fact'
+  ansible.builtin.set_fact:
+    routerboard_fact: "{{ output.stdout_lines[0] | list }}"
+  no_log: true
+
+- name: 'Display the current list of users'
+  ansible.builtin.debug:
+    msg: "{{ routerboard_fact }}"

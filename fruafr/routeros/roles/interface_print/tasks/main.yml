@@ -1,0 +1,26 @@
+---
+# Author: David HEURTEVENT
+# Date : 2024-02-25
+# License: MIT
+
+# tasks file for interface_print
+
+# Print interface details
+
+- name: 'Prepare command'
+  ansible.builtin.set_fact:
+    cmd: "/interface {{ interface }} print"
+
+- name: "Run {{ cmd }} on {{ ansible_host }}"
+  community.network.routeros_command:
+    commands: "[:put ([{{ cmd }}])]"
+  register: output
+
+- name: 'Store fact'
+  ansible.builtin.set_fact:
+    routerboard_fact: "{{ output.stdout_lines[0] | list }}"
+  no_log: true
+
+- name: "Display the current {{ interface }} details"
+  ansible.builtin.debug:
+    msg: "{{ routerboard_fact }}"

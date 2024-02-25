@@ -1,0 +1,16 @@
+---
+# Author: David HEURTEVENT
+# Date: 2024-02-25
+# License: MIT
+
+# Print ethernet interface details
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: print ethernet interface details
+    import_role: 
+      name: interface_print
+    vars:
+      interface: 'ethernet'
