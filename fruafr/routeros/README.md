@@ -36,6 +36,8 @@ Does not support answers to prompt questions due to limitation in [community.rou
 - fruafr.routeros.export_script: Export the configuration as a plain text script
 - fruafr.routeros.export_backup_encrypted: Export the configuration as an encrypted backup
 - fruafr.routeros.get_facts : Gather and print the system facts
+- fruafr.routeros.import_script : Import a plain text configuration script
+- fruafr.routeros.import_backup_encrypted : Import an encrypted backup
 - fruafr.routeros.interface_print : Print interface details
 - fruafr.routeros.ip_address_print : Print the list of IPv4 addresses
 - fruafr.routeros.ip_route_print : Print the IPv4 routes 
