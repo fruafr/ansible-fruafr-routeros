@@ -20,6 +20,7 @@ Does not support answers to prompt questions due to limitation in [community.rou
 ## Playbooks
 - get_facts.yml : Gather and print the system facts
 - ip_address_print.yml : Print the list of IPv4 addresses
+- ip_route_print.yml : Print the IPv4 routes 
 - system_identity_print.yml : Display the system's [identity](https://help.mikrotik.com/docs/display/ROS/Identity)
 - system_resource_print.yml : Gather and display the current system [resources](https://help.mikrotik.com/docs/display/ROS/Resource)
 - system_routerboard_print.yml : Gather and print the [routerboard information](https://help.mikrotik.com/docs/display/ROS/RouterBOARD) (board, firmware version etc)
@@ -28,6 +29,7 @@ Does not support answers to prompt questions due to limitation in [community.rou
 ## Roles
 - fruafr.routeros.get_facts : Gather and print the system facts
 - fruafr.routeros.ip_address_print : Print the list of IPv4 addresses
+- fruafr.routeros.ip_route_print : Print the IPv4 routes 
 - fruafr.routeros.system_identity_print : Display the system's [identity](https://help.mikrotik.com/docs/display/ROS/Identity)
 - fruafr.routeros.system_identity_set : Change the system's [identity](https://help.mikrotik.com/docs/display/ROS/Identity)
 - fruafr.routeros.system_resource_print : Gather and display the current system [resources](https://help.mikrotik.com/docs/display/ROS/Resource)

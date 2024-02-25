@@ -1,0 +1,26 @@
+---
+# Author: David HEURTEVENT
+# Date : 2024-02-25
+# License: MIT
+
+# tasks file for ip_route_print
+
+# Print the IPv4 routes
+
+- name: 'Prepare command'
+  ansible.builtin.set_fact:
+    cmd: "/ip route print"
+
+- name: "Run {{ cmd }} on {{ ansible_host }}"
+  community.network.routeros_command:
+    commands: "[:put ([{{ cmd }}])]"
+  register: output
+
+- name: 'Store fact'
+  ansible.builtin.set_fact:
+    routerboard_fact: "{{ output.stdout_lines[0] | list }}"
+  no_log: true
+
+- name: 'Display the current list of IPv4 routes'
+  ansible.builtin.debug:
+    msg: "{{ routerboard_fact }}"

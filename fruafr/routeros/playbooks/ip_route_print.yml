@@ -1,0 +1,14 @@
+---
+# Author: David HEURTEVENT
+# Date: 2024-02-25
+# License: MIT
+
+# Print the IPv4 routes 
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: print IPv4 addresses
+    import_role: 
+      name: ip_route_print

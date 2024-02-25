@@ -1,0 +1,8 @@
+---
+# Author: David HEURTEVENT
+# Date : 2024-02-25
+# License: MIT
+
+# defaults file for ip_route_print
+# See https://docs.ansible.com/ansible/latest/collections/community/routeros/facts_module.html#ansible-collections-community-routeros-facts-module
+subset: 'config'
